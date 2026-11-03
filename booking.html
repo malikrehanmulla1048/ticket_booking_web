@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Tickets | IPL Ticket Booking</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>IPL Ticket Booking</h1>
+
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="index.html#matches">Matches</a>
+      <a href="booking.html" aria-current="page">Book Tickets</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Ticket Booking Form</h2>
+      <p>Enter your details and select your tickets. Fields marked as required must be completed.</p>
+
+      <form action="#" method="post">
+        <label for="name">Full name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Your full name"
+          minlength="2"
+          maxlength="50"
+          autocomplete="name"
+          required
+        >
+
+        <label for="email">Email address</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="you@example.com"
+          maxlength="100"
+          autocomplete="email"
+          required
+        >
+
+        <label for="phone">Phone number</label>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          placeholder="10-digit phone number"
+          pattern="[0-9]{10}"
+          minlength="10"
+          maxlength="10"
+          title="Enter a 10-digit phone number without spaces or symbols."
+          autocomplete="tel"
+          required
+        >
+
+        <label for="match">Select a match</label>
+        <select id="match" name="match" required>
+          <option value="">Choose a match</option>
+          <option value="csk-mi">Chennai Super Kings vs Mumbai Indians</option>
+          <option value="rcb-kkr">Royal Challengers Bengaluru vs Kolkata Knight Riders</option>
+        </select>
+
+        <label for="stand">Stand category</label>
+        <select id="stand" name="stand" required>
+          <option value="">Choose a stand</option>
+          <option value="general">General</option>
+          <option value="premium">Premium</option>
+          <option value="vip">VIP</option>
+        </select>
+
+        <label for="tickets">Number of tickets</label>
+        <input
+          type="number"
+          id="tickets"
+          name="tickets"
+          min="1"
+          max="10"
+          step="1"
+          value="1"
+          required
+        >
+
+        <fieldset>
+          <legend>Booking preference (optional)</legend>
+          <label class="radio-option">
+            <input type="radio" name="preference" value="aisle">
+            Aisle seats, if available
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="preference" value="no-preference" checked>
+            No preference
+          </label>
+        </fieldset>
+
+        <div class="form-actions">
+          <button type="submit">Submit Booking</button>
+          <button type="reset" class="reset-button">Reset Form</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>Contact: support@example.com</p>
+    <p>&copy; 2026 IPL Ticket Booking</p>
+  </footer>
+</body>
+</html>
