@@ -8,10 +8,19 @@
   <script src="app.js" defer></script>
 </head>
 <body>
-  <header>
-    <h1>IPL Ticket Booking</h1>
+  <header class="site-header">
+    <div class="brand">
+      <img src="trophy-logo.svg" alt="" width="44" height="44">
+      <h1>IPL Ticket Booking</h1>
+    </div>
 
-    <nav aria-label="Main navigation">
+    <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Toggle navigation" aria-controls="main-nav" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav id="main-nav" aria-label="Main navigation">
       <a href="index.html">Home</a>
       <a href="index.html#matches">Matches</a>
       <a href="booking.html" aria-current="page">Book Tickets</a>
@@ -106,6 +115,32 @@
           <button type="reset" class="reset-button">Reset Form</button>
         </div>
       </form>
+
+      <aside id="booking-summary" aria-labelledby="summary-heading" aria-live="polite">
+        <h3 id="summary-heading">Booking Summary</h3>
+        <dl>
+          <div>
+            <dt>Match</dt>
+            <dd id="summary-match">Not selected</dd>
+          </div>
+          <div>
+            <dt>Stand</dt>
+            <dd id="summary-stand">Not selected</dd>
+          </div>
+          <div>
+            <dt>Tickets</dt>
+            <dd id="summary-tickets">Not selected</dd>
+          </div>
+          <div>
+            <dt>Price per ticket</dt>
+            <dd id="summary-price">—</dd>
+          </div>
+          <div class="summary-total-row">
+            <dt>Total</dt>
+            <dd id="summary-total">Select a match, stand, and quantity</dd>
+          </div>
+        </dl>
+      </aside>
     </section>
   </main>
 

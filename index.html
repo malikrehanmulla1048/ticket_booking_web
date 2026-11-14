@@ -9,10 +9,19 @@
 </head>
 <body>
 
-  <header>
-    <h1>IPL Ticket Booking</h1>
+  <header class="site-header">
+    <div class="brand">
+      <img src="trophy-logo.svg" alt="" width="44" height="44">
+      <h1>IPL Ticket Booking</h1>
+    </div>
 
-    <nav aria-label="Main navigation">
+    <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Toggle navigation" aria-controls="main-nav" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav id="main-nav" aria-label="Main navigation">
       <a href="#home">Home</a>
       <a href="#matches">Matches</a>
       <a href="booking.html">Book Tickets</a>
@@ -30,21 +39,57 @@
     <section id="matches">
       <h2>Upcoming Matches</h2>
 
-      <article>
-        <h3>Chennai Super Kings vs Mumbai Indians</h3>
-        <p>Date: 15 April 2026</p>
-        <p>Venue: Chennai</p>
-        <p>Tickets from: ₹1,000</p>
-        <a href="booking.html?match=csk-mi">Book this match</a>
-      </article>
+      <div class="match-controls">
+        <label for="team-filter">Filter by team</label>
+        <select id="team-filter">
+          <option value="all">All teams</option>
+          <option value="CSK">Chennai Super Kings</option>
+          <option value="MI">Mumbai Indians</option>
+          <option value="RCB">Royal Challengers Bengaluru</option>
+          <option value="KKR">Kolkata Knight Riders</option>
+        </select>
 
-      <article>
-        <h3>Royal Challengers Bengaluru vs Kolkata Knight Riders</h3>
-        <p>Date: 18 April 2026</p>
-        <p>Venue: Bengaluru</p>
-        <p>Tickets from: ₹800</p>
-        <a href="booking.html?match=rcb-kkr">Book this match</a>
-      </article>
+        <div class="view-controls" role="group" aria-label="Match display">
+          <button type="button" class="view-toggle" data-view="grid" aria-pressed="true">Grid view</button>
+          <button type="button" class="view-toggle" data-view="list" aria-pressed="false">List view</button>
+        </div>
+      </div>
+
+      <div class="match-grid" id="match-grid">
+        <article class="match-card" data-teams="CSK MI">
+          <h3>Chennai Super Kings vs Mumbai Indians</h3>
+          <p>Date: 15 April 2026</p>
+          <p>Venue: Chennai</p>
+          <p>Tickets from: ₹1,000</p>
+          <a href="booking.html?match=csk-mi">Book this match</a>
+        </article>
+
+        <article class="match-card" data-teams="RCB KKR">
+          <h3>Royal Challengers Bengaluru vs Kolkata Knight Riders</h3>
+          <p>Date: 18 April 2026</p>
+          <p>Venue: Bengaluru</p>
+          <p>Tickets from: ₹800</p>
+          <a href="booking.html?match=rcb-kkr">Book this match</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="guidelines">
+      <h2>Booking Guidelines</h2>
+      <div class="guideline-grid">
+        <article class="guideline-card">
+          <h3>Choose your match</h3>
+          <p>Review the schedule and select the match you want to attend.</p>
+        </article>
+        <article class="guideline-card">
+          <h3>Select your seats</h3>
+          <p>Pick a stand category and choose between 1 and 10 tickets.</p>
+        </article>
+        <article class="guideline-card">
+          <h3>Check your details</h3>
+          <p>Review the live booking summary and provide your contact details.</p>
+        </article>
+      </div>
     </section>
 
     <section id="booking">
